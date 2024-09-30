@@ -13,10 +13,8 @@ const Chat = () => {
     setLoading(true); // Set loading state
 
     try {
-      // API endpoint for the ChatGPT API
       const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
-      // Using environment variable for the API key
       const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
 
       const headers = {
@@ -25,7 +23,7 @@ const Chat = () => {
       };
 
       const requestBody = {
-        model: 'gpt-3.5-turbo', // or 'gpt-4' if you're using GPT-4
+        model: 'gpt-3.5-turbo',
         messages: [{ role: 'user', content: input }],
         max_tokens: 150,
         temperature: 0.7,
@@ -33,7 +31,8 @@ const Chat = () => {
 
       const { data } = await axios.post(apiUrl, requestBody, { headers });
 
-      setResponse(data.choices[0].message.content); // Adjust based on API response format
+      setResponse(data.choices[0].message.content);
+      setInput('');
     } catch (error) {
       console.error('Error sending message:', error);
       setError('There was an error sending the message. Please try again.');
@@ -43,8 +42,8 @@ const Chat = () => {
   };
 
   return (
-    <div className="chatgpt-container"> {/* Apply the CSS class */}
-      <h2>ChatGPT Integration</h2> {/* Apply styling from the CSS file */}
+    <div className="chatgpt-container">
+      <h2>ChatGPT Integration</h2>
 
       <form onSubmit={(e) => { e.preventDefault(); sendMessage(); }} className="chat-form">
         <input

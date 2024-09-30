@@ -8,27 +8,27 @@ import Subscription from './components/Subscription';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Chat from './components/Chat';  // Import the Chat component
-import Messaging from './components/Messages';  // Import the Messaging component
+import Chat from './components/Chat';
+import Messaging from './components/Messages';
 
 
 const App = () => {
   return (
     <Router>
-      <Navbar /> {/* Your Navbar */}
-      <ImageHeader /> {/* Image header for your app */}
+      <Navbar />
+      <ImageHeader />
       <Routes>
         <Route path="/" element={
           <div className="content">
             <FeaturedArticles />
             <FeaturedTutorials />
-            <Messaging /> {/* Messaging component added to homepage */}
+            <Messaging />
             <Subscription />
           </div>
         } />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/chat" element={<Chat />} /> {/* Chat page */}
+        <Route path="/chat" element={<Chat />} />
       </Routes>
       <Footer />
     </Router>

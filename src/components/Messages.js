@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { auth, db } from '../utilities/firebase'; // Make sure Firebase is set up
+import { auth, db } from '../utilities/firebase'; 
 import { collection, addDoc, query, orderBy, onSnapshot } from 'firebase/firestore';
 import '../styles/Messages.css';
 
