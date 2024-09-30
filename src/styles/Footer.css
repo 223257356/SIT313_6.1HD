@@ -1,0 +1,32 @@
+.segment.vertical {
+    background-color: #008b8b !important;
+    color: white !important;
+  }
+
+  .segment.vertical .header,
+  .segment.vertical .list .item {
+    color: white !important;
+  }
+
+  .segment.vertical .list .item:hover {
+    color: #ddd !important;
+  }
+
+  .segment.vertical .list.horizontal .item {
+    padding: 0 10px;
+  }
+
+  .segment.vertical .list.horizontal .item:not(:last-child)::after {
+    content: '';
+    margin-left: 10px;
+    color: white;
+  }
+
+  .segment.vertical .icon-row a {
+    color: white;
+    margin-right: 15px;
+  }
+
+  .segment.vertical .icon-row a:last-child {
+    margin-right: 0;
+  }

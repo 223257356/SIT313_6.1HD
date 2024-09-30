@@ -1,0 +1,18 @@
+.subscription-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .subscription-title {
+    margin-right: 10px;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  .subscription-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }

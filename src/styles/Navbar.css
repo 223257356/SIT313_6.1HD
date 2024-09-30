@@ -1,0 +1,16 @@
+.Menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 1em;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6; 
+  }
+
+  .Menu .item {
+    padding: 0.5em 1em;
+  }
+
+  .Menu .input {
+    width: 100%;
+  }
