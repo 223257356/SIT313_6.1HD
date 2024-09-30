@@ -5,8 +5,12 @@ import { signInWithGooglePopup, createUserDocFromAuth, auth } from '../utilities
 import { signInWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, signOut } from 'firebase/auth';
 
 const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocFromAuth(user);
+    try {
+        const { user } = await signInWithGooglePopup();
+        await createUserDocFromAuth(user);
+    } catch (error) {
+        console.error('Google Sign-In Error:', error);
+    }
 };
 
 const Login = () => {
@@ -20,7 +24,7 @@ const Login = () => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setCurrentUser(user);
-                if (!user.emailVerified) {
+                if (!user.emailVerified && user.providerData[0].providerId === 'password') {
                     alert('Please verify your email to access the application.');
                     sendEmailVerification(auth.currentUser)
                         .then(() => {
