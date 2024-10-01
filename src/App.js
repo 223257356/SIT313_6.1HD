@@ -10,7 +10,9 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Chat from './components/Chat';
 import Messaging from './components/Messages';
-
+import PricingPlan from './components/PricingPlan'; // Import PricingPlans component
+import Payment from './components/Payment'; // Import Payment component
+import PostComponent from './components/PostComponent'; // Import Post component
 
 const App = () => {
   return (
@@ -29,6 +31,9 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/chat" element={<Chat />} />
+        <Route path="/pricing" element={<PricingPlan />} /> {/* Add PricingPlans route */}
+        <Route path="/payment" element={<Payment />} /> {/* Add Payment route */}
+        <Route path="/posts" element={<PostComponent />} /> {/* Add PostComponent route */}
       </Routes>
       <Footer />
     </Router>

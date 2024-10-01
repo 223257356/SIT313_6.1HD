@@ -1,0 +1,32 @@
+.post-component {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .editor-section {
+    margin-bottom: 20px;
+  }
+
+  .preview-section {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+
+  .preview-section pre {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+
+  .preview-section code {
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }

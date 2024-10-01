@@ -1,14 +1,15 @@
 import React from 'react';
 import { Card, Button, Container } from 'semantic-ui-react';
-import faker from 'faker';
+import { faker } from '@faker-js/faker'; // Correct import from @faker-js/faker
 import ArticleCard from './ArticleCard';
 import '../styles/FeaturedArticles.css';
 
+// Use the updated faker API
 const articles = Array.from({ length: 3 }, () => ({
   title: faker.lorem.sentence(),
   description: faker.lorem.paragraph(),
-  author: faker.name.findName(),
-  rating: faker.datatype.number({ min: 4, max: 5 }),
+  author: faker.person.fullName(), // Updated method to get a full name
+  rating: faker.number.int({ min: 4, max: 5 }), // Updated method for generating a number
 }));
 
 const FeaturedArticles = () => (
